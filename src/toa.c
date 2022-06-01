@@ -111,7 +111,7 @@ inet_getname_toa(struct socket *sock, struct sockaddr *uaddr,
 		sk->sk_user_data);
 
 	/* call orginal one */
-	retval = inet_getname(sock, uaddr, uaddr_len, peer);
+	retval = inet_getname(sock, uaddr, peer);
 
 	/* set our value if need */
 	if (retval == 0 && NULL != sk->sk_user_data && peer) {
@@ -161,7 +161,7 @@ inet6_getname_toa(struct socket *sock, struct sockaddr *uaddr,
 		sk->sk_user_data);
 
 	/* call orginal one */
-	retval = inet6_getname(sock, uaddr, uaddr_len, peer);
+	retval = inet6_getname(sock, uaddr, peer);
 
 	/* set our value if need */
 	if (retval == 0 && NULL != sk->sk_user_data && peer) {
